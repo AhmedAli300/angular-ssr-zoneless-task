@@ -1,6 +1,12 @@
-# Digital Bond Landing Page 🚀
+# Digital Bond Landing Page 
 
 > **A high-performance, modern landing page for Digital Bond Agency** — built with Angular 20, SSR, Zoneless Reactivity, and optimized for Lighthouse 100/100.
+
+## 🔗 Project Links
+
+* **Repository:** https://github.com/AhmedAli300/angular-ssr-zoneless-task
+
+* **Live Demo:** https://angular-ssr-zoneless-task.vercel.app
 
 [![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)](https://angular.dev)
 [![SSR](https://img.shields.io/badge/SSR-Enabled-blue)](https://angular.dev/guide/ssr)
