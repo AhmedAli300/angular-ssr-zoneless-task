@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" width="700" height="560" fill="none">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E51E2B"/>
+      <stop offset="100%" stop-color="#990E17"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E51E2B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#E51E2B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Background Glows -->
+  <circle cx="520" cy="220" r="160" fill="url(#redGlow)"/>
+  <circle cx="240" cy="380" r="140" fill="url(#blueGlow)"/>
+
+  <!-- Geometric Grid Accent Lines -->
+  <path d="M120 140 L580 140 M120 280 L580 280 M120 420 L580 420" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <path d="M220 80 L220 480 M380 80 L380 480 M540 80 L540 480" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Main Hero Dashboard Mockup -->
+  <g filter="url(#softShadow)">
+    <rect x="110" y="80" width="480" height="340" rx="20" fill="url(#cardGrad)" stroke="#E2E8F0" stroke-width="2"/>
+    
+    <!-- Window Bar -->
+    <rect x="110" y="80" width="480" height="42" rx="20" fill="#F1F5F9"/>
+    <path d="M110 102 H590" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="138" cy="101" r="5" fill="#EF4444"/>
+    <circle cx="154" cy="101" r="5" fill="#F59E0B"/>
+    <circle cx="170" cy="101" r="5" fill="#10B981"/>
+    
+    <!-- Search / URL Bar -->
+    <rect x="220" y="91" width="260" height="20" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="350" y="105" font-family="sans-serif" font-size="10" fill="#64748B" text-anchor="middle">digitalbondmena.com/growth-analytics</text>
+
+    <!-- Content Area: Chart and KPIs -->
+    <!-- Metric 1 -->
+    <rect x="140" y="145" width="130" height="75" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="156" y="172" font-family="sans-serif" font-size="11" font-weight="600" fill="#64748B">ROI Multiple</text>
+    <text x="156" y="202" font-family="sans-serif" font-size="24" font-weight="900" fill="#E51E2B">10.4x</text>
+    <circle cx="244" cy="168" r="10" fill="#FEF2F2"/>
+    <path d="M240 171 L244 165 L248 171" stroke="#E51E2B" stroke-width="2" fill="none"/>
+
+    <!-- Metric 2 -->
+    <rect x="285" y="145" width="130" height="75" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="301" y="172" font-family="sans-serif" font-size="11" font-weight="600" fill="#64748B">New Conversions</text>
+    <text x="301" y="202" font-family="sans-serif" font-size="24" font-weight="900" fill="#0F172A">+342%</text>
+    <circle cx="389" cy="168" r="10" fill="#EFF6FF"/>
+    <path d="M385 171 L389 165 L393 171" stroke="#3B82F6" stroke-width="2" fill="none"/>
+
+    <!-- Metric 3 -->
+    <rect x="430" y="145" width="130" height="75" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="446" y="172" font-family="sans-serif" font-size="11" font-weight="600" fill="#64748B">Satisfaction</text>
+    <text x="446" y="202" font-family="sans-serif" font-size="24" font-weight="900" fill="#10B981">99.8%</text>
+    <circle cx="534" cy="168" r="10" fill="#ECFDF5"/>
+    <path d="M530 171 L534 165 L538 171" stroke="#10B981" stroke-width="2" fill="none"/>
+
+    <!-- Growth Graph / Curve -->
+    <rect x="140" y="235" width="420" height="155" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <!-- Grid inside graph -->
+    <line x1="160" y1="360" x2="540" y2="360" stroke="#F1F5F9" stroke-width="1"/>
+    <line x1="160" y1="315" x2="540" y2="315" stroke="#F1F5F9" stroke-width="1"/>
+    <line x1="160" y1="270" x2="540" y2="270" stroke="#F1F5F9" stroke-width="1"/>
+
+    <!-- Gradient area under curve -->
+    <path d="M 160 350 Q 240 330 310 290 T 430 250 T 540 240 L 540 370 L 160 370 Z" fill="url(#primaryGrad)" fill-opacity="0.12"/>
+    <!-- The actual bold line -->
+    <path d="M 160 350 Q 240 330 310 290 T 430 250 T 540 240" stroke="#E51E2B" stroke-width="4" stroke-linecap="round" fill="none"/>
+    
+    <!-- Data points -->
+    <circle cx="310" cy="290" r="5" fill="#FFFFFF" stroke="#E51E2B" stroke-width="3"/>
+    <circle cx="430" cy="250" r="5" fill="#FFFFFF" stroke="#E51E2B" stroke-width="3"/>
+    <circle cx="540" cy="240" r="7" fill="#E51E2B" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+
+  <!-- Floating Badge 1: Real-time Growth -->
+  <g filter="url(#softShadow)">
+    <rect x="50" y="270" width="170" height="74" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="66" y="286" width="42" height="42" rx="12" fill="#FEF2F2"/>
+    <path d="M78 313 L87 301 L96 313" stroke="#E51E2B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="118" y="303" font-family="sans-serif" font-size="11" font-weight="600" fill="#64748B">Campaigns</text>
+    <text x="118" y="322" font-family="sans-serif" font-size="16" font-weight="900" fill="#0F172A">+250 Active</text>
+  </g>
+
+  <!-- Floating Badge 2: Lead Generation Verified -->
+  <g filter="url(#softShadow)">
+    <rect x="470" y="360" width="190" height="76" rx="16" fill="#0B0F19" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="486" y="377" width="42" height="42" rx="12" fill="#E51E2B"/>
+    <path d="M498 398 L504 404 L516 392" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="538" y="394" font-family="sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Top Rating</text>
+    <text x="538" y="413" font-family="sans-serif" font-size="15" font-weight="900" fill="#FFFFFF">5.0 Star Agency</text>
+  </g>
+</svg>
