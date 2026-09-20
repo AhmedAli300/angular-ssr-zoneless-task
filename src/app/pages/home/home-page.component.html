@@ -1,0 +1,22 @@
+<div class="landing-page-layout">
+  <!-- Sticky Transparent / Blurred Navbar (SSR rendered, JS deferred to interaction) -->
+  @defer (hydrate on interaction) {
+    <app-navbar />
+  }
+
+  <main>
+    <!-- Hero section rendered via SSR, JS hydration deferred to interaction for 0ms TBT -->
+    @defer (hydrate on interaction) {
+      <app-hero-section />
+    }
+
+    <!-- Below-the-fold with Incremental Hydration on viewport -->
+    @defer (hydrate on viewport) {
+      <app-services-section />
+      <app-testimonials />
+      <app-contact-us />
+      <app-success-modal />
+      <app-footer />
+    }
+  </main>
+</div>

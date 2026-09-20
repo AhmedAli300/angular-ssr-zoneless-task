@@ -1,0 +1,243 @@
+/* ==========================================================================
+   HERO SECTION COMPONENT STYLES
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  padding-top: calc(var(--section-spacing-y) + 2.5rem);
+  padding-bottom: var(--section-spacing-y);
+  background: radial-gradient(circle at 85% 15%, rgba(229, 30, 43, 0.04) 0%, transparent 60%),
+              radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+              #FFFFFF;
+  overflow: hidden;
+  contain: paint layout;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  contain: strict;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-glow-1 {
+  top: 5%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(229, 30, 43, 0.08) 0%, transparent 70%);
+}
+
+.hero-glow-2 {
+  bottom: 10%;
+  left: -5%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  position: relative;
+}
+
+.badge-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: pulseDot 2s ease-out infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.5);
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-pulse::after {
+    animation: none;
+  }
+}
+
+.hero-headline {
+  font-size: clamp(2.35rem, 4.2vw, 3.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, #B91C1C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 1.3vw, 1.1875rem);
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 2.25rem;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-main {
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+}
+
+.hero-btn-secondary {
+  padding: 0.95rem 1.75rem;
+  font-size: 1rem;
+}
+
+/* Trust Metrics Strip */
+.hero-trust-metrics {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.metric-divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--border-color);
+}
+
+/* Right Visual */
+.hero-visual-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-box {
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-image-box:hover {
+  transform: translateY(-4px);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 700 / 560;
+  object-fit: contain;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust-metrics {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-trust-metrics {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .metric-divider {
+    display: none;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-btn-main,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+}

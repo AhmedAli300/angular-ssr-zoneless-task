@@ -1,0 +1,146 @@
+<section class="section testimonials-section" id="testimonials">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <div class="badge-tag">Client Feedback</div>
+      <h2 class="section-title">Trusted by Leading Brands Across the MENA Region</h2>
+      <p class="section-subtitle">
+        Real stories and quantifiable results from clients who partnered with Digital Bond to accelerate their digital growth.
+      </p>
+    </div>
+
+    <!-- Carousel: Strictly displays ONE person's review at a time -->
+    <div 
+      class="carousel-wrapper"
+      (mouseenter)="pauseAutoPlay()"
+      (mouseleave)="resumeAutoPlay()"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+      (mousedown)="onMouseDown($event)"
+      (mouseup)="onMouseUp($event)"
+      role="region"
+      aria-label="Client Testimonial"
+    >
+    <div class="container-artical">
+      @if (currentTestimonial(); as person) {
+        <article class="testimonial-single-card" [attr.data-id]="person.id">
+          <!-- Live Badge if user submitted this review -->
+          @if (person.isUserSubmitted) {
+            <div class="user-submitted-badge">
+              <span class="live-dot"></span>
+              <span>✨ Your Submitted Review (Just Added)</span>
+            </div>
+          }
+
+          <!-- 1. Client Identity & Rating Header -->
+          <div class="card-top-bar">
+            <div class="client-profile">
+              <img 
+                [src]="person.avatarUrl" 
+                [alt]="person.clientName" 
+                width="64" 
+                height="64" 
+                class="client-avatar"
+                loading="lazy"
+              />
+              <div class="client-meta">
+                <h3 class="client-name">{{ person.clientName }}</h3>
+                <p class="client-role">{{ person.role }} • <strong class="client-company">{{ person.company }}</strong></p>
+                @if (person.date) {
+                  <span class="client-date">{{ person.date }}</span>
+                }
+              </div>
+            </div>
+
+            <!-- Stars & Slide Counter -->
+            <div class="rating-and-counter">
+              <div class="star-rating" aria-label="5 out of 5 stars">
+                @for (star of [1,2,3,4,5]; track star) {
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                }
+                <span class="rating-val">5.0</span>
+              </div>
+              <span class="slide-count-pill">
+                Review <strong>{{ currentIndex() + 1 }}</strong> of {{ totalSlides() }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Visual Divider separating identity from review text -->
+          <hr class="card-divider" />
+
+          <!-- 2. Review Content (Always on its own new line, clean wrapping for long text) -->
+          <div class="review-content-wrapper">
+            <div class="quote-mark-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="var(--primary-glow)" stroke="var(--primary)" stroke-width="1.5">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 4-2 6-4 6v2zm13 0c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 4-2 6-4 6v2z"/>
+              </svg>
+            </div>
+            <blockquote class="testimonial-text">
+              {{ person.review }}
+            </blockquote>
+          </div>
+
+          <!-- 3. Highlight Metric Pill Badge -->
+          @if (person.highlightMetric) {
+            <div class="card-metric-footer">
+              <div class="highlight-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 18 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>{{ person.highlightMetric }}</span>
+              </div>
+            </div>
+          }
+        </article>
+      }
+      </div>
+      <!-- Carousel Navigation Controls: Next & Prev -->
+      <div class="carousel-nav-controls">
+        <button 
+          type="button" 
+          class="nav-arrow-btn prev-btn" 
+          (click)="prevSlide()"
+          aria-label="Previous client review"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Previous</span>
+        </button>
+
+        <!-- Dots Indicator -->
+        <div class="carousel-dots" role="tablist" aria-label="Testimonial slides">
+          @for (item of testimonials(); track item.id; let idx = $index) {
+            <button 
+              type="button" 
+              role="tab"
+              class="dot-btn"
+              [class.active]="idx === currentIndex()"
+              [attr.aria-selected]="idx === currentIndex()"
+              [attr.aria-label]="'Go to client review ' + (idx + 1)"
+              (click)="goToSlide(idx)"
+            >
+              <span class="dot-indicator"></span>
+            </button>
+          }
+        </div>
+
+        <button 
+          type="button" 
+          class="nav-arrow-btn next-btn" 
+          (click)="nextSlide()"
+          aria-label="Next client review"
+        >
+          <span>Next</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

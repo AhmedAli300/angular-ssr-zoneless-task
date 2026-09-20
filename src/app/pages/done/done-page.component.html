@@ -1,0 +1,103 @@
+<div class="done-page-layout">
+  <app-navbar />
+
+  <main class="done-main">
+    <div class="container">
+      <div class="done-card">
+        <!-- Digital Bond Logo Icon -->
+        <div class="brand-badge-icon">
+          <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 H50 C65 20 75 30 75 45 C75 60 65 70 50 70 H20 Z" stroke="#E51E2B" stroke-width="10" stroke-linejoin="round"/>
+            <circle cx="35" cy="35" r="8" fill="#E51E2B"/>
+            <circle cx="65" cy="45" r="8" fill="#0B0F19"/>
+            <line x1="35" y1="35" x2="65" y2="45" stroke="#0B0F19" stroke-width="4"/>
+          </svg>
+        </div>
+
+        <h1 class="done-title">THANKS!</h1>
+        <h2 class="done-sub">Let's Bond Together</h2>
+
+        @if (contactService.submittedData(); as data) {
+          <div class="confirmed-summary">
+            <div class="summary-badge">
+              <span>Proposal Request Confirmed</span> • <strong>Ref: {{ data.id }}</strong>
+            </div>
+
+            <p class="summary-intro">
+              Thank you, <strong>{{ data.fullName }}</strong>! We have recorded your interest in <strong>{{ data.service }}</strong> and automatically published your feedback to our live testimonials!
+            </p>
+
+            <div class="summary-details-box">
+              <div class="summary-line">
+                <span class="label">Email:</span>
+                <span class="value">{{ data.email }}</span>
+              </div>
+              <div class="summary-line">
+                <span class="label">Phone:</span>
+                <span class="value">{{ data.phone }}</span>
+              </div>
+              <div class="summary-line">
+                <span class="label">Submitted At:</span>
+                <span class="value">{{ data.submittedAt }}</span>
+              </div>
+              <div class="summary-line summary-line-block">
+                <span class="label">Your Message:</span>
+                <p class="value-msg">"{{ data.message }}"</p>
+              </div>
+            </div>
+          </div>
+        } @else {
+          <p class="general-text">
+            We look forward to growing your brand beyond limits.
+          </p>
+        }
+
+        <!-- Agency Quick Direct Info as per PDF slide 9 -->
+        <div class="agency-contact-chips">
+          <a href="tel:00201021551322" class="contact-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>002-01021551322</span>
+          </a>
+
+          <a href="mailto:Bonder@digitalbondmena.com" class="contact-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Bonder&#64;digitalbondmena.com</span>
+          </a>
+
+          <a href="https://digitalbondmena.com" target="_blank" rel="noopener noreferrer" class="contact-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>digitalbondmena.com</span>
+          </a>
+        </div>
+
+        <div class="done-actions">
+          <button type="button" class="btn btn-primary" (click)="viewInTestimonials()">
+            <span>✨ View Your Review in Testimonials</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
+          <button type="button" class="btn btn-secondary" (click)="goHome()">
+            <span>Return to Homepage</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Also include modal if active -->
+    <app-success-modal />
+  </main>
+
+  <app-footer />
+</div>

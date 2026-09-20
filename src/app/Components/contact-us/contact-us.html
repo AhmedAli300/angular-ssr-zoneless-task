@@ -1,0 +1,199 @@
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid-card">
+      <!-- Left Column: Official Agency Contact Information -->
+      <div class="contact-info-panel">
+        <div class="badge-tag badge-white">Get In Touch</div>
+        <h2 class="info-title">Let’s Bond Together & Build Your Brand's Next Chapter</h2>
+        <p class="info-description">
+          Have an upcoming project or looking to scale your digital presence? Schedule a free strategy consultation with Digital Bond specialists today.
+        </p>
+
+        <div class="contact-methods">
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="method-text">
+              <span class="method-label">Direct Phone</span>
+              <a href="tel:00201021551322" class="method-val">002-01021551322</a>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="method-text">
+              <span class="method-label">Official Email</span>
+              <a href="mailto:Bonder@digitalbondmena.com" class="method-val">Bonder&#64;digitalbondmena.com</a>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="method-text">
+              <span class="method-label">Agency Headquarters</span>
+              <span class="method-val">11 Ahmed Al Shatouri, Ad Dokki, Giza Governorate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-pledge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Guaranteed response within 24 business hours.</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Form with Real-time Validation -->
+      <div class="contact-form-panel">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate class="form-wrapper">
+          <h3 class="form-title">Send a Proposal Request</h3>
+          <p class="form-sub">Tell us about your brand goals and requirements.</p>
+
+          <!-- Full Name -->
+          <div class="form-field">
+            <label for="fullName" class="field-label">Full Name <span class="required">*</span></label>
+            <input 
+              id="fullName" 
+              type="text" 
+              formControlName="fullName"
+              placeholder="e.g. Ahmed Mahmoud"
+              class="field-input"
+              [class.has-error]="isFieldInvalid('fullName')"
+            />
+            @if (isFieldInvalid('fullName')) {
+              <div class="field-error-msg">
+                @if (contactForm.get('fullName')?.hasError('required')) {
+                  Full Name is required.
+                } @else if (contactForm.get('fullName')?.hasError('minlength')) {
+                  Name must contain at least 3 characters.
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Grid: Email & Phone -->
+          <div class="form-row-2">
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email" class="field-label">Business Email <span class="required">*</span></label>
+              <input 
+                id="email" 
+                type="email" 
+                formControlName="email"
+                placeholder="name@company.com"
+                class="field-input"
+                [class.has-error]="isFieldInvalid('email')"
+              />
+              @if (isFieldInvalid('email')) {
+                <div class="field-error-msg">
+                  @if (contactForm.get('email')?.hasError('required')) {
+                    Email address is required.
+                  } @else if (contactForm.get('email')?.hasError('email')) {
+                    Please enter a valid email format.
+                  }
+                </div>
+              }
+            </div>
+
+            <!-- Phone -->
+            <div class="form-field">
+              <label for="phone" class="field-label">Phone Number <span class="required">*</span></label>
+              <input 
+                id="phone" 
+                type="tel" 
+                formControlName="phone"
+                placeholder="+20 100 000 0000"
+                class="field-input"
+                [class.has-error]="isFieldInvalid('phone')"
+              />
+              @if (isFieldInvalid('phone')) {
+                <div class="field-error-msg">
+                  @if (contactForm.get('phone')?.hasError('required')) {
+                    Phone number is required.
+                  } @else if (contactForm.get('phone')?.hasError('pattern')) {
+                    Please provide a valid phone number.
+                  }
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Service Selection -->
+          <div class="form-field">
+            <label for="service" class="field-label">Service of Interest <span class="required">*</span></label>
+            <select 
+              id="service" 
+              formControlName="service"
+              class="field-input field-select"
+              [class.has-error]="isFieldInvalid('service')"
+            >
+              <option value="" disabled selected>Select a primary service</option>
+              @for (svc of services(); track svc.id) {
+                <option [value]="svc.title">{{ svc.title }}</option>
+              }
+            </select>
+            @if (isFieldInvalid('service')) {
+              <div class="field-error-msg">
+                Please select the service you are interested in.
+              </div>
+            }
+          </div>
+
+          <!-- Message -->
+          <div class="form-field">
+            <label for="message" class="field-label">Project Brief & Details <span class="required">*</span></label>
+            <textarea 
+              id="message" 
+              rows="4"
+              formControlName="message"
+              placeholder="Describe your goals, timeline, and current challenges..."
+              class="field-input field-textarea"
+              [class.has-error]="isFieldInvalid('message')"
+            ></textarea>
+            @if (isFieldInvalid('message')) {
+              <div class="field-error-msg">
+                @if (contactForm.get('message')?.hasError('required')) {
+                  Project description is required.
+                } @else if (contactForm.get('message')?.hasError('minlength')) {
+                  Please write at least 10 characters so we can understand your request.
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="btn btn-primary form-submit-btn"
+            [disabled]="contactService.isSubmitting()"
+          >
+            @if (contactService.isSubmitting()) {
+              <span class="spinner"></span>
+              <span>Sending Proposal Request...</span>
+            } @else {
+              <span>Submit & Request Proposal</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            }
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

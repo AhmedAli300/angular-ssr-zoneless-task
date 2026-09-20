@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "clientName": "Tarek Mansour",
+    "role": "Chief Marketing Officer",
+    "company": "Nexus Retail Group",
+    "avatarUrl": "images/avatars/avatar-1.svg",
+    "rating": 5,
+    "review": "Digital Bond transformed our entire omnichannel marketing presence",
+    "highlightMetric": "+320% Qualified Leads",
+    "date": "2026-08-15"
+  },
+  {
+    "id": 2,
+    "clientName": "Dina El-Shazly",
+    "role": "Head of E-Commerce",
+    "company": "Moda Lifestyle",
+    "avatarUrl": "images/avatars/avatar-2.svg",
+    "rating": 5,
+    "review": "The web development and SEO teams at Digital Bond delivered an ultra-fast platform with instant loading times",
+    "highlightMetric": "+180% Organic Conversions",
+    "date": "2026-08-28"
+  },
+  {
+    "id": 3,
+    "clientName": "Karim Fahmy",
+    "role": "Founder & CEO",
+    "company": "FinTech Horizon",
+    "avatarUrl": "images/avatars/avatar-3.svg",
+    "rating": 5,
+    "review": "Their influencer marketing and media production campaigns made our app launch go viral across the MENA region.",
+    "highlightMetric": "1.2M+ App Downloads",
+    "date": "2026-09-02"
+  },
+  {
+    "id": 4,
+    "clientName": "Salma Radwan",
+    "role": "Director of Growth",
+    "company": "Aura Health & Care",
+    "avatarUrl": "images/avatars/avatar-4.svg",
+    "rating": 5,
+    "review": "From automated SMS campaigns to social media community management, Digital Bond feels like a true in-house partner. Highly responsive",
+    "highlightMetric": "98% Customer Retention",
+    "date": "2026-09-10"
+  },
+  {
+    "id": 5,
+    "clientName": "Omar Abdel-Aziz",
+    "role": "VP of Technology",
+    "company": "SaaS Scale MENA",
+    "avatarUrl": "images/avatars/avatar-1.svg",
+    "rating": 5,
+    "review": "Partnering with Digital Bond for our full-stack web and mobile application development exceeded our wildest KPIs. The site speed is blazingly fast with 100/100 Lighthouse performance scores.",
+    "highlightMetric": "99.9% Uptime & 100/100 Speed",
+    "date": "2026-09-12"
+  },
+  {
+    "id": 6,
+    "clientName": "Nouran Hegazi",
+    "role": "Creative Director",
+    "company": "Vanguard Media",
+    "avatarUrl": "images/avatars/avatar-2.svg",
+    "rating": 5,
+    "review": "The visual storytelling and video production by Digital Bond set a new industry benchmark for our brand campaigns. The creative team is highly skilled and innovative.",
+    "highlightMetric": "+240% Brand Recall",
+    "date": "2026-09-16"
+  }
+]
