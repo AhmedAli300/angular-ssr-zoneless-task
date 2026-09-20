@@ -152,7 +152,7 @@ ng version
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/digital-bond-landing.git
+git clone https://github.com/AhmedAli300/angular-ssr-zoneless-task
 
 # Navigate to project directory
 cd digital-bond-landing
@@ -221,7 +221,7 @@ Look for these SSR indicators in the response:
 **Expected Scores:**
 ```
 Performance:   100 / 100
-Accessibility:  98+ / 100
+Accessibility: 100+ / 100
 Best Practices: 100 / 100
 SEO:            100 / 100
 ```
