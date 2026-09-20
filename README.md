@@ -230,7 +230,7 @@ SEO:            100 / 100
 
 If deployed to Vercel, visit:
 ```
-https://pagespeed.web.dev/analysis?url=https://your-vercel-domain.vercel.app
+https://angular-ssr-zoneless-task.vercel.app
 ```
 
 ### Option 3: Chrome User Timing API (Core Web Vitals)
